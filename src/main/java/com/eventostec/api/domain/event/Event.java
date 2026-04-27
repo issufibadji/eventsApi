@@ -9,33 +9,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.UUID;
 
-//Anotação com @
-@Table(name = "event") //Mapear tabela
-@Entity //Mapear Entidade
+@Table(name = "event")
+@Entity
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Event {
-
     @Id
     @GeneratedValue
-
     private UUID id;
 
     private String title;
-
     private String description;
-
     private String imgUrl;
-
     private String eventUrl;
-
     private Boolean remote;
-
     private Date date;
-
 }

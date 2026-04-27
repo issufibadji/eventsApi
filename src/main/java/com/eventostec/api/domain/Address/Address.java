@@ -1,4 +1,4 @@
-package com.eventostec.api.domain.Address;
+package com.eventostec.api.domain.address;
 
 import com.eventostec.api.domain.event.Event;
 import jakarta.persistence.*;
@@ -9,25 +9,21 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-@Table (name = "Address")
+@Table(name = "address")
 @Entity
-@Setter
 @Getter
-@NoArgsConstructor
+@Setter
 @AllArgsConstructor
-
+@NoArgsConstructor
 public class Address {
     @Id
     @GeneratedValue
+    private UUID id;
 
-    private UUID Id;
-
+    private String city;
     private String uf;
 
-    private  String City;
-
-    @ManyToOne
-    @JoinColumn(name = "event_id)")
+    @OneToOne
+    @JoinColumn(name = "event_id")
     private Event event;
-
 }
